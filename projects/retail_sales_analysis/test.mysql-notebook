@@ -30,7 +30,7 @@
                 "lineNumber": 5,
                 "column": 1
             },
-            "firstPositionDeltaTop": 335
+            "firstPositionDeltaTop": 314
         },
         "contributionsState": {
             "editor.contrib.folding": {},
@@ -77,7 +77,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "1afd9da1-637d-4af9-e7a0-32969c879e86"
+                        "dc152b84-8e20-4130-9ebc-b794391d1b30"
                     ]
                 },
                 "currentHeight": 36,
@@ -96,8 +96,8 @@
             },
             "data": [
                 {
-                    "tabId": "51c1db77-22aa-4269-b9b8-a3b515bdcc5b",
-                    "resultId": "1afd9da1-637d-4af9-e7a0-32969c879e86",
+                    "tabId": "5c37437c-5670-42d5-ded2-8da19b274731",
+                    "resultId": "dc152b84-8e20-4130-9ebc-b794391d1b30",
                     "rows": [
                         {
                             "0": "information_schema"
@@ -190,7 +190,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "7cb5a3db-5e3b-4a0a-b2af-2a365489f1e3"
+                        "86bd4691-6e37-43bf-dbfc-7ecb32cc8c9c"
                     ]
                 },
                 "currentHeight": 352,
@@ -209,8 +209,8 @@
             },
             "data": [
                 {
-                    "tabId": "51c1db77-22aa-4269-b9b8-a3b515bdcc5b",
-                    "resultId": "7cb5a3db-5e3b-4a0a-b2af-2a365489f1e3",
+                    "tabId": "5c37437c-5670-42d5-ded2-8da19b274731",
+                    "resultId": "86bd4691-6e37-43bf-dbfc-7ecb32cc8c9c",
                     "rows": [
                         {
                             "0": "actor"
@@ -322,8 +322,8 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "9dccff5a-8cc3-4b4f-8e3b-fcc9540bc234",
-                        "c7ad0273-f67a-41eb-d24e-a72701c5741f"
+                        "36c015d0-6ee2-4749-ee0b-6cfe758c5119",
+                        "5eeff55c-9460-4528-d50c-90f6c2be9c66"
                     ]
                 },
                 "currentHeight": 352,
@@ -342,8 +342,8 @@
             },
             "data": [
                 {
-                    "tabId": "51c1db77-22aa-4269-b9b8-a3b515bdcc5b",
-                    "resultId": "9dccff5a-8cc3-4b4f-8e3b-fcc9540bc234",
+                    "tabId": "5c37437c-5670-42d5-ded2-8da19b274731",
+                    "resultId": "36c015d0-6ee2-4749-ee0b-6cfe758c5119",
                     "rows": [
                         {
                             "0": 1,
@@ -10473,8 +10473,8 @@
                     "fullTableName": "film_list"
                 },
                 {
-                    "tabId": "51c1db77-22aa-4269-b9b8-a3b515bdcc5b",
-                    "resultId": "c7ad0273-f67a-41eb-d24e-a72701c5741f",
+                    "tabId": "5c37437c-5670-42d5-ded2-8da19b274731",
+                    "resultId": "5eeff55c-9460-4528-d50c-90f6c2be9c66",
                     "rows": [
                         {
                             "0": 1,
