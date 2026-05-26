@@ -95,7 +95,7 @@ The following SQL queries were developed to answer specific business questions:
 
 ![query_6](images/query_6.png)
 
-7. **Write a SQL query to calculate the average sale for each month. Find out best selling month in each year**
+7. **Calculate the average sale for each month. Find out best selling month in each year**
 
 subquery result
 
@@ -105,15 +105,15 @@ final result
 
 ![query_7_2](images/query_72.png)
 
-8. **Write a SQL query to find the top 5 customers based on the highest total sales**
+8. **Find the top 5 customers based on the highest total sales**
 
 ![query_8](images/query_8.png)
 
-9. **Write a SQL query to find the number of unique customers who purchased items from each category.**
+9. **Find the number of unique customers who purchased items from each category.**
 
 ![query_9](images/query_9.png)
 
-10. **Write a SQL query to create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 17, Evening >17)**
+10. **Create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 17, Evening >17)**
 
 Common Table Expression (CTE) result
 
