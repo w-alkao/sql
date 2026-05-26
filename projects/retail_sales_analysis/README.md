@@ -4,7 +4,7 @@
 
 **Project Title**: Retail Sales Analysis  
 **Level**: Beginner  
-**Database**: `sql_project`
+**Database**: `Postgresql`
 
 This project is designed to demonstrate SQL skills and techniques typically used by data data manager/analysts to explore, clean, and analyze retail sales data. The project involves setting up a retail sales database, performing exploratory data analysis (EDA), and answering specific business questions through SQL queries. This project is ideal for those who are starting their journey in data analysis and want to build a solid foundation in SQL.
 
@@ -23,7 +23,8 @@ This project is designed to demonstrate SQL skills and techniques typically used
 - **Table Creation**: A table named `retail_sales` is created to store the sales data. The table structure includes columns for transaction ID, sale date, sale time, customer ID, gender, age, product category, quantity sold, price per unit, cost of goods sold (COGS), and total sale amount.
 - **Table Population**: After creating table we populate it with data containing in a csv file
 
-Overview of all data:
+Dataset Overview:
+
 ![Dataset Overview](images/query_all.png)
 
 ### 2. Data Exploration & Cleaning
@@ -70,41 +71,56 @@ The sql file for these queries can be find here: ![SQL File for all queries](sql
 
 The following SQL queries were developed to answer specific business questions:
 
-1. **Retrieve all columns for sales made on '2022-11-05**:
-Result:
+1. **Retrieve all columns for sales made on '2022-11-05**
+
 ![query_1](images/query_1.png)
 
-2. **Write a SQL query to retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022**:
+2. **Retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022**
+
 ![query_2](images/query_2.png)
 
-3. **Write a SQL query to calculate the total sales (total_sale) for each category.**:
+3. **Calculate the total sales (total_sale) for each category.**
+
 ![query_3](images/query_3.png)
 
-4. **Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category.**:
+4. **Find the average age of customers who purchased items from the 'Beauty' category.**
+
 ![query_4](images/query_4.png)
 
-5. **Write a SQL query to find all transactions where the total_sale is greater than 1000.**:
+5. **Find all transactions where the total_sale is greater than 1000.**:
+
 ![query_5](images/query_5.png)
 
-6. **Write a SQL query to find the total number of transactions (transaction_id) made by each gender in each category.**:
+6. **Find the total number of transactions (transaction_id) made by each gender in each category.**
+
 ![query_6](images/query_6.png)
 
-7. **Write a SQL query to calculate the average sale for each month. Find out best selling month in each year**:
-first result for:
+7. **Write a SQL query to calculate the average sale for each month. Find out best selling month in each year**
+
+subquery result
+
 ![query_7_1](images/query_71.png)
-second result:
+
+final result
+
 ![query_7_2](images/query_72.png)
 
-8. **Write a SQL query to find the top 5 customers based on the highest total sales **:
+8. **Write a SQL query to find the top 5 customers based on the highest total sales**
+
 ![query_8](images/query_8.png)
 
-9. **Write a SQL query to find the number of unique customers who purchased items from each category.**:
+9. **Write a SQL query to find the number of unique customers who purchased items from each category.**
+
 ![query_9](images/query_9.png)
 
-10. **Write a SQL query to create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 17, Evening >17)**:
-result 1
+10. **Write a SQL query to create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 17, Evening >17)**
+
+Common Table Expression (CTE) result
+
 ![query_10_1](images/query_101.png)
-result 2:
+
+Final Result
+
 ![query_10_2](images/query_102.png)
 
 ## Findings
