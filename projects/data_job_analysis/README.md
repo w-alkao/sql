@@ -37,10 +37,10 @@ SELECT
 	job_schedule_type,
 	salary_year_avg,
 	job_posted_date,
-    name AS company_name
+	name AS company_name
 FROM
-    job_postings_fact
-LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
+	job_analysis.job_postings_fact AS jpf
+LEFT JOIN job_analysis.company_dim AS cmON jpf.company_id = cm.company_id
 WHERE
     job_title_short = 'Data Analyst' AND 
     job_location = 'Anywhere' AND 
@@ -63,12 +63,13 @@ To understand what skills are required for the top-paying jobs, I joined the job
 WITH top_paying_jobs AS (
     SELECT	
         job_id,
+		job_title_short,
         job_title,
         salary_year_avg,
         name AS company_name
     FROM
-        job_postings_fact
-    LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
+        job_analysis.job_postings_fact AS jpf
+    	LEFT JOIN job_analysis.company_dim AS cd ON jpf.company_id = cd.company_id
     WHERE
         job_title_short = 'Data Analyst' AND 
         job_location = 'Anywhere' AND 
@@ -81,9 +82,10 @@ WITH top_paying_jobs AS (
 SELECT 
     top_paying_jobs.*,
     skills
-FROM top_paying_jobs
-INNER JOIN skills_job_dim ON top_paying_jobs.job_id = skills_job_dim.job_id
-INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+FROM
+	top_paying_jobs
+	INNER JOIN job_analysis.skills_job_dim  AS sjd ON top_paying_jobs.job_id = sjd.job_id
+	INNER JOIN job_analysis.skills_dim AS sd ON sjd.skill_id = sd.skill_id
 ORDER BY
     salary_year_avg DESC;
 ```
@@ -105,10 +107,11 @@ This query helped identify the skills most frequently requested in job postings,
 ```sql
 SELECT 
     skills,
-    COUNT(skills_job_dim.job_id) AS demand_count
-FROM job_postings_fact
-INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
-INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+    COUNT(sjd.job_id) AS demand_count
+FROM
+	job_analysis.job_postings_fact As jpf
+	INNER JOIN job_analysis.skills_job_dim AS sjd ON jpf.job_id = sjd.job_id
+	INNER JOIN job_analysis.skills_dim AS sd ON sjd.skill_id = sd.skill_id
 WHERE
     job_title_short = 'Data Analyst' 
     AND job_work_from_home = True 
@@ -116,7 +119,7 @@ GROUP BY
     skills
 ORDER BY
     demand_count DESC
-LIMIT 5;
+LIMIT 10;
 ```
 Here's the breakdown of the most demanded skills for data analysts in 2023
 - **SQL** and **Excel** remain fundamental, emphasizing the need for strong foundational skills in data processing and spreadsheet manipulation.
@@ -132,9 +135,10 @@ Exploring the average salaries associated with different skills revealed which s
 SELECT 
     skills,
     ROUND(AVG(salary_year_avg), 0) AS avg_salary
-FROM job_postings_fact
-INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
-INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+FROM
+	job_analysis.job_postings_fact AS jpf
+	INNER JOIN job_analysis.skills_job_dim AS sjd ON jpf.job_id = sjd.job_id
+	INNER JOIN job_analysis.skills_dim AS sd ON sjd.skill_id = sd.skill_id
 WHERE
     job_title_short = 'Data Analyst'
     AND salary_year_avg IS NOT NULL
@@ -160,21 +164,22 @@ Combining insights from demand and salary data, this query aimed to pinpoint ski
 
 ```sql
 SELECT 
-    skills_dim.skill_id,
-    skills_dim.skills,
-    COUNT(skills_job_dim.job_id) AS demand_count,
-    ROUND(AVG(job_postings_fact.salary_year_avg), 0) AS avg_salary
-FROM job_postings_fact
-INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
-INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+    sd.skill_id,
+    sd.skills,
+    COUNT(sjd.job_id) AS demand_count,
+    ROUND(AVG(jpf.salary_year_avg), 0) AS avg_salary
+FROM
+	job_analysis.job_postings_fact AS jpf
+	INNER JOIN job_analysis.skills_job_dim AS sjd ON jpf.job_id = sjd.job_id
+	INNER JOIN job_analysis.skills_dim AS sd ON sjd.skill_id = sd.skill_id
 WHERE
     job_title_short = 'Data Analyst'
     AND salary_year_avg IS NOT NULL
     AND job_work_from_home = True 
 GROUP BY
-    skills_dim.skill_id
+    sd.skill_id
 HAVING
-    COUNT(skills_job_dim.job_id) > 10
+    COUNT(sjd.job_id) > 10
 ORDER BY
     avg_salary DESC,
     demand_count DESC
