@@ -4,7 +4,7 @@ Question: What skills are required for the top-paying data analyst jobs?
 - Add the specific skills required for these roles
 - Why? It provides a detailed look at which high-paying jobs demand certain skills, 
     helping job seekers understand which skills to develop that align with top salaries
-*/;
+*/
 
 WITH top_paying_jobs AS (
     SELECT	
@@ -41,6 +41,8 @@ SQL is leading with a bold count of 8.
 Python follows closely with a bold count of 7.
 Tableau is also highly sought after, with a bold count of 6.
 Other skills like R, Snowflake, Pandas, and Excel show varying degrees of demand.
+This indicates that proficiency in SQL, Python, and Tableau is particularly valuable for data analysts aiming for top-paying roles.
+*/
 
 
   
