@@ -113,4 +113,6 @@ SELECT
 	END AS sls_price
 FROM bronze.crm_sales_details;
 
-SELECT * FROM silver.crm_sales_details
+SELECT * FROM silver.crm_sales_details ORDER BY 3
+SELECT * FROM bronze.crm_sales_details ORDER BY 3
+SELECT * FROM silver.crm_prd_info ORDER BY 3
