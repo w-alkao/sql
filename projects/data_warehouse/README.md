@@ -1,49 +1,10 @@
 # Data Warehouse and Analytics Project
 
 Welcome to the **Data Warehouse and Analytics Project** ! 🚀  
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
+This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics. This project demonstrates the design and implementation of a modern data warehouse using a Medallion Architecture (Bronze → Silver → Gold). Data is collected from multiple business systems, transformed into clean and consistent datasets, and finally modeled into a star schema optimized for analytics and reporting.
 
----
-
-## 📖 Project Overview
-
-This project involves:
-
-1. **Data Architecture**: Designing a Modern Data Warehouse Using Medallion Architecture **Bronze**, **Silver**, and **Gold** layers.
-2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
-3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
-4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
-
---- 
-
-## 🏗️ 1 Data Architecture
-
-The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
-![Data Architecture](images/high_level_architecture.png)
-
-1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
-2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
-3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
-
----
-
-
-🎯 Showcase expertise in:
-- SQL Development
-- Data Architect
-- Data Engineering  
-- ETL Pipeline Developer  
-- Data Modeling  
-- Data Analytics  
-
----
-
-## 🚀 Project Requirements
-
-### Building the Data Warehouse (Data Engineering)
-
-#### Objective
-Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
+#### 🚀 Project Goal
+The objective of this project is to build a scalable data warehouse that integrates CRM and ERP data, applies data quality transformations through Bronze and Silver layers, and delivers a business-ready Sales Data Mart in the Gold layer for reporting, dashboarding, and advanced analytics.
 
 #### Specifications
 - **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
@@ -52,9 +13,83 @@ Develop a modern data warehouse using SQL Server to consolidate sales data, enab
 - **Scope**: Focus on the latest dataset only; historization of data is not required.
 - **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
 
+# Tools I Used
+For my deep dive into the data analyst job market, I harnessed the power of several key tools:
+
+- **SQLSERVER:** The backbone of my analysis, allowing me to query the database and unearth critical insights.
+- **Visual Studio Code:** My go-to for database management and executing SQL queries.
+- **Git & GitHub:** Essential for version control and sharing my SQL scripts and analysis, ensuring collaboration and project tracking.
+
 ---
 
-### BI: Analytics & Reporting (Data Analysis)
+## 📖 Project Overview
+
+This project involves:
+
+1. **Data Architecture**: Designing a Modern Data Warehouse Using Medallion Architecture **Bronze**, **Silver**, and **Gold** layers.
+2. **Data Flow Diagram**: Show how data moves from source systems through the data warehouse
+3. **Data Relations**: Illustrate how CRM and ERP datasets are related before loading them into the analytical model
+4. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
+5. **Analytics & Reporting (Coming Soon)**: Creating SQL-based reports and dashboards for actionable insights.
+6. **Data Calalog for Gold Layer**: Meta data about Gold layer
+7. **Skills**: Skills developed through the project
+
+--- 
+
+## 🏗️ Data Architecture
+
+![Data Architecture](images/high_level_architecture.png)
+
+The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
+
+1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
+2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
+3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
+
+---
+
+## Data Flow Diagram
+
+![Data Flow Diagram](images/data_flow.png)
+
+This diagram illustrates the movement of data from source systems to the final analytical layer.
+
+1. **Sources Systems**: The warehouse integrates data from two operational systems CRM and ERP
+2. **Bronze Layer**: The Bronze layer stores raw data exactly as received from the source systems. Preserve original source data, Enable data lineage and auditing, Serve as the landing zone for ingestion.
+3. **Silver Layer**: The Silver layer contains cleansed and standardized datasets. Typical transformations include Data type corrections Duplicate removal, Missing value handling, Data quality validation, Standardization of business attributes. Improve data quality, create trusted datasets for analytics
+4. **Gold Layer**: The Gold layer contains business-ready datasets created by integrating CRM and ERP information. Main entities are Sales, Customers and Product. Provide curated datasets for reporting and dashboards, Support business intelligence and decision-making.
+
+---
+
+## 🏗️ Data Relationship Diagram
+
+![Data Architecture](images/data_relation.png)
+
+This diagram shows how data from CRM and ERP systems are related before being transformed into the analytical model.
+
+1. **Customer Data Integration**: Customer information originates from multiple tables CRM and ERP. These datasets are combined to create a complete customer profile.
+2. **Product Data Integration**: Product information is enriched using CRM and ERP source data. This integration produces a richer product dimension for analysis.
+3. **Sales Data**: contains transactional sales records and references both customers and Products.This table becomes the foundation of the sales fact table in the Gold layer
+
+---
+
+## 🏗️ Sales Data Mart
+
+![Data Architecture](images/data_model.png)
+
+The Gold layer is modeled as a Star Schema, a dimensional model optimized for reporting and analytical queries.
+
+1. **Fact Sales**:This table stores measurable business events (sales transactions).
+2. **Customer Dimension**: Contains descriptive customer attributes. Enable customer segmentation and demographic analysis
+3. **Product Dimension**: Contains descriptive product information. Support product performance and category analysis
+
+Relationship Types:
+    One customers -> Many Sales
+    One Product -> Many Sales
+
+---
+
+## COMING SOON: BI, Analytics & Reporting (Data Analysis) 
 
 #### Objective
 Develop SQL-based analytics to deliver detailed insights into:
@@ -65,9 +100,10 @@ Develop SQL-based analytics to deliver detailed insights into:
 These insights empower stakeholders with key business metrics, enabling strategic decision-making.  
 
 ---
-# Data Catalog for Gold Layer
 
-## Overview
+## Data Catalog for Gold Layer
+
+### Overview
 The Gold Layer is the business-level data representation, structured to support analytical and reporting use cases. It consists of **dimension tables** and **fact tables** for specific business metrics.
 
 ---
@@ -129,8 +165,18 @@ The Gold Layer is the business-level data representation, structured to support 
 
 ----
 
+🎯 Showcase expertise:
+- SQL Development
+- Data Architect
+- Data Engineering  
+- ETL Pipeline Developer  
+- Data Modeling  
+- Data Analytics 
+
+---
+
 ## 📂 Project Structure
-```
+
 data-warehouse-project/
 │
 ├── datasets/                  # Raw datasets used for the project (ERP and CRM data)
