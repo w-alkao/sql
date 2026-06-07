@@ -1,3 +1,25 @@
+/*
+===============================================================================
+Quality Checks & Load Sales Details Infos Data
+===============================================================================
+Script Purpose:
+    This script performs various quality checks for data consistency, accuracy, 
+    and standardization across the bronze.crm_sales_details Table and performs the ETL (Extract, Transform, Load) process to 
+    populate the silver.crm_sales_details schema tables from the 'bronze' schema.
+	It includes checks for:
+    - Null or duplicate primary keys.
+    - Unwanted spaces in string fields.
+    - Data standardization and consistency.
+    - Invalid date ranges and orders.
+    - Data consistency between related fields.
+
+	- Truncates Silver.crm_sales_details tables.
+	- Inserts transformed and cleansed data from Bronze.crm_sales_details into Silver.crm_sales_details tables.
+===============================================================================
+*/
+
+
+
 -- check for unwanted space on product number
 
 SELECT sls_prd_num
@@ -86,7 +108,9 @@ CREATE TABLE silver.crm_sales_details (
 	dwh_create_date DATETIME2 DEFAULT GETDATE()
 );
 
--- Load the clean data into sales details table
+-- Load the clean data into sales details table after truncating table
+
+TRUNCATE TABLE silver.crm_sales_details;
 
 INSERT INTO silver.crm_sales_details (
 	sls_ord_num, sls_prd_key, sls_cust_id, sls_order_dt, sls_ship_dt, sls_due_dt, sls_sales, sls_quantity, sls_price

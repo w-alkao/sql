@@ -1,3 +1,23 @@
+/*
+===============================================================================
+Quality Checks & Load Locations Infos Data
+===============================================================================
+Script Purpose:
+    This script performs various quality checks for data consistency, accuracy, 
+    and standardization across the bronze.erp_loc_a101 Table and performs the ETL (Extract, Transform, Load) process to 
+    populate the silver.erp_loc_a101 schema tables from the 'bronze' schema.
+	It includes checks for:
+    - Null or duplicate primary keys.
+    - Unwanted spaces in string fields.
+    - Data standardization and consistency.
+    - Invalid date ranges and orders.
+    - Data consistency between related fields.
+
+	- Truncates Silver.erp_loc_a101 tables.
+	- Inserts transformed and cleansed data from Bronze.erp_loc_a101 into Silver.erp_loc_a101 tables.
+===============================================================================
+*/
+
 SELECT * FROM bronze.erp_loc_a101
 
 SELECT * FROM silver.crm_cust_info

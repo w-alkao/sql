@@ -1,3 +1,23 @@
+/*
+===============================================================================
+Quality Checks & Load Product Category Infos Data
+===============================================================================
+Script Purpose:
+    This script performs various quality checks for data consistency, accuracy, 
+    and standardization across the bronze.erp_px_cat_g1v2 Table and performs the ETL (Extract, Transform, Load) process to 
+    populate the silver.erp_px_cat_g1v2 schema tables from the 'bronze' schema.
+	It includes checks for:
+    - Null or duplicate primary keys.
+    - Unwanted spaces in string fields.
+    - Data standardization and consistency.
+    - Invalid date ranges and orders.
+    - Data consistency between related fields.
+
+	- Truncates Silver.erp_px_cat_g1v2 tables.
+	- Inserts transformed and cleansed data from Bronze.erp_px_cat_g1v2 into Silver.erp_px_cat_g1v2 tables.
+===============================================================================
+*/
+
 SELECT * FROM bronze.erp_px_cat_g1v2
 SELECT * FROM silver.crm_prd_info
 
