@@ -1,3 +1,23 @@
+/*
+===============================================================================
+Quality Checks & Create Fact Sales Views
+===============================================================================
+Script Purpose:
+    This script performs quality checks to validate the integrity, consistency, 
+    and accuracy of fact sales and creates views in the Gold layer . 
+    The Gold layer represents the final dimension and fact tables (Star Schema)
+These checks ensure:
+    - Uniqueness of surrogate keys in dimension tables.
+    - Referential integrity between fact and dimension tables.
+    - Validation of relationships in the data model for analytical purposes.
+
+    This view performs transformations and combines data from the Silver layer 
+    to produce a clean, enriched, and business-ready dataset.
+===============================================================================
+*/
+
+
+
 SELECT * FROM silver.crm_sales_details
 SELECT * FROM gold.dim_customers
 SELECT * FROM gold.dim_products

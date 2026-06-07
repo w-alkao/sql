@@ -1,3 +1,21 @@
+/*
+===============================================================================
+Quality Checks & Create Dimension Customers Views
+===============================================================================
+Script Purpose:
+    This script performs quality checks to validate the integrity, consistency, 
+    and accuracy of dimension customers and creates views in the Gold layer . 
+    The Gold layer represents the final dimension and fact tables (Star Schema)
+These checks ensure:
+    - Uniqueness of surrogate keys in dimension tables.
+    - Referential integrity between fact and dimension tables.
+    - Validation of relationships in the data model for analytical purposes.
+
+    This view performs transformations and combines data from the Silver layer 
+    to produce a clean, enriched, and business-ready dataset.
+===============================================================================
+*/
+
 SELECT * FROM silver.crm_cust_info;
 SELECT * FROM silver.erp_cust_az12;
 SELECT * FROM silver.erp_loc_a101;
@@ -101,6 +119,7 @@ ORDER BY 1, 2
 
 -- Final joining into view
 
+DROP VIEW gold.dim_customers;
 
 CREATE VIEW gold.dim_customers AS
 	SELECT
