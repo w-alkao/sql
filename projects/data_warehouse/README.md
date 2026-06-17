@@ -3,6 +3,13 @@
 Welcome to the **Data Warehouse and Analytics Project** ! 🚀  
 This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics. This project demonstrates the design and implementation of a modern data warehouse using a Medallion Architecture (Bronze → Silver → Gold). Data is collected from multiple business systems, transformed into clean and consistent datasets, and finally modeled into a star schema optimized for analytics and reporting.
 
+**📂 Project Structure**
+- [SQLServer Scripts Directory (.sql) /](scripts/)
+- [Project Description (README File)](README.md)
+- [Project Data Directory /](data/)
+- [Project Images Directory /](images/)
+- [Project Diagrams Directory /](images/)
+
 #### 🚀 Project Goal
 The objective of this project is to build a scalable data warehouse that integrates CRM and ERP data, applies data quality transformations through Bronze and Silver layers, and delivers a business-ready Sales Data Mart in the Gold layer for reporting, dashboarding, and advanced analytics.
 
@@ -20,21 +27,20 @@ For my deep dive into the data analyst job market, I harnessed the power of seve
 - **Visual Studio Code:** My go-to for database management and executing SQL queries.
 - **Git & GitHub:** Essential for version control and sharing my SQL scripts and analysis, ensuring collaboration and project tracking.
 
----
 
 ## 📖 Project Overview
 
 This project involves:
 
-1. **Data Architecture**: Designing a Modern Data Warehouse Using Medallion Architecture **Bronze**, **Silver**, and **Gold** layers.
-2. **Data Flow Diagram**: Show how data moves from source systems through the data warehouse
-3. **Data Relations**: Illustrate how CRM and ERP datasets are related before loading them into the analytical model
-4. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
-5. **Analytics & Reporting (Coming Soon)**: Creating SQL-based reports and dashboards for actionable insights.
-6. **Data Calalog for Gold Layer**: Meta data about Gold layer
-7. **Skills**: Skills developed through the project
+1. **Data Architecture**: *Designing a Modern Data Warehouse Using Medallion Architecture **Bronze**, **Silver**, and **Gold** layers*.
+2. **Data Flow Diagram**: *Show how data moves from source systems through the data warehouse*
+3. **Data Relations**: *Illustrate how CRM and ERP datasets are related before loading them into the analytical model*
+4. **Data Modeling**: *Developing fact and dimension tables optimized for analytical queries.*
+5. **Analytics & Reporting (Coming Soon)**: *Creating SQL-based reports and dashboards for actionable insights*
+6. **Data Calalog for Gold Layer**: *Meta data about Gold layer*
+7. **Skills**: *Skills developed through the project*
 
---- 
+
 
 ## 🏗️ Data Architecture
 
@@ -46,7 +52,7 @@ The data architecture for this project follows Medallion Architecture **Bronze**
 2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
 3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
 
----
+
 
 ## Data Flow Diagram
 
@@ -59,7 +65,7 @@ This diagram illustrates the movement of data from source systems to the final a
 3. **Silver Layer**: The Silver layer contains cleansed and standardized datasets. Typical transformations include Data type corrections Duplicate removal, Missing value handling, Data quality validation, Standardization of business attributes. Improve data quality, create trusted datasets for analytics
 4. **Gold Layer**: The Gold layer contains business-ready datasets created by integrating CRM and ERP information. Main entities are Sales, Customers and Product. Provide curated datasets for reporting and dashboards, Support business intelligence and decision-making.
 
----
+
 
 ## 🏗️ Data Relationship Diagram
 
@@ -71,7 +77,7 @@ This diagram shows how data from CRM and ERP systems are related before being tr
 2. **Product Data Integration**: Product information is enriched using CRM and ERP source data. This integration produces a richer product dimension for analysis.
 3. **Sales Data**: contains transactional sales records and references both customers and Products.This table becomes the foundation of the sales fact table in the Gold layer
 
----
+
 
 ## 🏗️ Sales Data Mart
 
@@ -87,7 +93,7 @@ Relationship Types:
     One customers -> Many Sales
     One Product -> Many Sales
 
----
+
 
 ## COMING SOON: BI, Analytics & Reporting (Data Analysis) 
 
@@ -99,7 +105,7 @@ Develop SQL-based analytics to deliver detailed insights into:
 
 These insights empower stakeholders with key business metrics, enabling strategic decision-making.  
 
----
+
 
 ## Data Catalog for Gold Layer
 
@@ -125,7 +131,7 @@ The Gold Layer is the business-level data representation, structured to support 
 | birthdate        | DATE          | The date of birth of the customer, formatted as YYYY-MM-DD (e.g., 1971-10-06).               |
 | create_date      | DATE          | The date and time when the customer record was created in the system|
 
----
+
 
 ### 2. **gold.dim_products**
 - **Purpose:** Provides information about the products and their attributes.
@@ -165,7 +171,7 @@ The Gold Layer is the business-level data representation, structured to support 
 
 ----
 
-🎯 Showcase expertise:
+### 🎯 Showcase expertise:
 - SQL Development
 - Data Architect
 - Data Engineering  
@@ -173,20 +179,8 @@ The Gold Layer is the business-level data representation, structured to support 
 - Data Modeling  
 - Data Analytics 
 
----
 
-## 📂 Project Structure
 
-data-warehouse-project/
-│
-├── datasets/                  # Raw datasets used for the project (ERP and CRM data)
-│
-├── diagrams/                  # Project diagrams 
-│ 
-|── images/                    # Project images
-|
-├── scripts/                   # SQL scripts for ETL and transformations 
-|                   
-└── README.md                  # Project overview
-```
+
+
 ## ☕ Stay Connected

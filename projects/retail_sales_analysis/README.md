@@ -1,4 +1,10 @@
-# Retail Sales Analysis SQL Project
+# Retail Sales Analysis
+
+**Project Structure**
+- [PostgreSQL Scripts File (.sql)](sql_scripts.sql)
+- [Project Description (README File)](README.md)
+- [Project Data Directory /](data/)
+- [Project images Directory /](images/)
 
 ## Project Overview
 
@@ -23,7 +29,7 @@ This project is designed to demonstrate SQL skills and techniques typically used
 - **Table Creation**: A table named `retail_sales` is created to store the sales data. The table structure includes columns for transaction ID, sale date, sale time, customer ID, gender, age, product category, quantity sold, price per unit, cost of goods sold (COGS), and total sale amount.
 - **Table Population**: After creating table we populate it with data containing in a csv file
 
-Dataset Overview:
+*Dataset Overview*:
 
 ![Dataset Overview](images/query_all.png)
 
@@ -56,70 +62,70 @@ WHERE
 
 Queries
 
-Q.1 Retrieve all columns for sales made on '2022-11-05'
-Q.2 Retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov 2022
-Q.3 Calculate the total sales for each category
-Q.4 Find the average age of customers who purchased items from the 'Beauty' category
-Q.5 Find all transactions where the total sale is greater than 1000
-Q.6 Fin the total number of transactions (transaction_id) made by each gender in each category.
-Q.7 Calculate the average sale for each month. Find out best selling month in each year.
-Q.8 Find the top 5 customers based on the highest total sales
-Q.9 Find the number of unique customers who purchased items from each category.
-Q.10 Creae each shift and number of orders (ex: Morning <= 12, Afternoon Between 12 & 17, Evening > 17)
+1. Retrieve all columns for sales made on *2022-11-05*
+2. Retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov 2022
+3. Calculate the total sales for each category
+4. Find the average age of customers who purchased items from the 'Beauty' category
+5. Find all transactions where the total sale is greater than 1000
+6. Find the total number of transactions (transaction_id) made by each gender in each category.
+7. Calculate the average sale for each month. Find out best selling month in each year.
+8. Find the top 5 customers based on the highest total sales
+9. Find the number of unique customers who purchased items from each category.
+10. Creae each shift and number of orders (ex: Morning <= 12, Afternoon Between 12 & 17, Evening > 17)
 
-The sql file for these queries can be find here: ![SQL File for all queries](sql_scripts.sql)
+---
 
-The following SQL queries were developed to answer specific business questions:
+### The following SQL queries were developed to answer specific business questions
 
-1. **Retrieve all columns for sales made on '2022-11-05**
+1.*Retrieve all columns for sales made on 2022-11-05*
 
 ![query_1](images/query_1.png)
 
-2. **Retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022**
+2.*Retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022*
 
 ![query_2](images/query_2.png)
 
-3. **Calculate the total sales (total_sale) for each category.**
+3.*Calculate the total sales (total_sale) for each category.*
 
 ![query_3](images/query_3.png)
 
-4. **Find the average age of customers who purchased items from the 'Beauty' category.**
+4.*Find the average age of customers who purchased items from the 'Beauty' category.*
 
 ![query_4](images/query_4.png)
 
-5. **Find all transactions where the total_sale is greater than 1000.**:
+5.*Find all transactions where the total_sale is greater than 1000.*:
 
 ![query_5](images/query_5.png)
 
-6. **Find the total number of transactions (transaction_id) made by each gender in each category.**
+6.*Find the total number of transactions (transaction_id) made by each gender in each category.*
 
 ![query_6](images/query_6.png)
 
-7. **Calculate the average sale for each month. Find out best selling month in each year**
+7.*Calculate the average sale for each month. Find out best selling month in each year*
 
-subquery result
+Fisrt we query the average sale of each month in each year
 
 ![query_7_1](images/query_71.png)
 
-final result
+Then we select the top sales month of each year
 
 ![query_7_2](images/query_72.png)
 
-8. **Find the top 5 customers based on the highest total sales**
+8.*Find the top 5 customers based on the highest total sales*
 
 ![query_8](images/query_8.png)
 
-9. **Find the number of unique customers who purchased items from each category.**
+9.*Find the number of unique customers who purchased items from each category.*
 
 ![query_9](images/query_9.png)
 
-10. **Create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 17, Evening >17)**
+10.*Create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 17, Evening >17)*
 
-Common Table Expression (CTE) result
+First we select query each sale time and create shift column for each sales time
 
 ![query_10_1](images/query_101.png)
 
-Final Result
+Then we group and count by shift column
 
 ![query_10_2](images/query_102.png)
 
